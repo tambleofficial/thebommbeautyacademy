@@ -561,8 +561,66 @@ input,textarea,button{font-family:inherit}
 html{-webkit-text-size-adjust:100%}body{overflow-x:hidden}@supports(overflow:clip){body{overflow-x:clip}}
 img,video{max-width:100%}
 @media (max-width:760px){[data-m2]{grid-template-columns:repeat(2,minmax(0,1fr))!important;row-gap:16px!important}[data-m3]{grid-template-columns:repeat(3,minmax(0,1fr))!important}[data-mhide]{display:none!important}}
-@media (max-width:560px){[data-g=wrap]{scale:.66}}
-@media (max-width:380px){[data-g=wrap]{scale:.56}}
+@media (max-width:759.98px){
+/* 공통: 섹션 위아래 여백을 휴대폰에 맞게 */
+main section[id]:not(#learn):not(#programs){padding-top:76px!important}
+main section[id]:not(#forwhom):not(#programs){padding-bottom:76px!important}
+[data-mx=deskonly]{display:none!important}
+main h2,main p{text-wrap:balance}
+[data-mx=kh2]{font-size:28px!important}
+/* 히어로: 글자를 화면 폭에 맞춰 크게 */
+[data-a=bomm],[data-a=academy]>div{font-size:min(25vw,12.5svh)!important}
+[data-s=bomm]{top:calc(env(safe-area-inset-top) + 88px)!important}
+[data-a=kr] span:nth-child(2){font-size:16px!important}
+/* 세 가지가 겹치는 곳: 원을 지그재그로 겹쳐 쌓기 */
+[data-mx=why]{flex-direction:column!important;flex-wrap:nowrap!important;align-items:stretch!important;row-gap:0!important}
+[data-mx=why]>*{width:min(64vw,250px)!important;margin-left:0!important;padding:8%!important}
+[data-mx=why]>:nth-child(1){align-self:flex-start}
+[data-mx=why]>:nth-child(2){align-self:flex-end;margin-top:-64px!important}
+[data-mx=why]>:nth-child(3){align-self:center;margin-top:-64px!important}
+/* 학습 경로 표시줄: 한 줄로 */
+[data-mx=lpath]{flex-wrap:nowrap!important;gap:8px!important;padding:11px 16px!important;justify-content:space-between}
+[data-mx=lpath]>span:first-child{display:none!important}
+[data-mx=lpath]>span>span:nth-child(3){display:none!important}
+[data-mx=lpath]>span:nth-child(3),[data-mx=lpath]>span:nth-child(5){min-width:10px!important}
+/* 대상 카드: 높이 줄이기 */
+[data-mx=fwcard]{min-height:0!important;padding:22px 20px 20px!important;gap:12px!important}
+[data-mx=fwcard]>span:nth-child(2){font-size:19px!important}
+/* 원형 단계(HOW WE TEACH·분석·피드백·철학): 왼쪽 원 + 오른쪽 설명, 세로 연결선 */
+[data-mx=mwrap]{padding-bottom:0!important}
+[data-mx=steps]{display:flex!important;flex-direction:column!important;gap:26px!important;position:relative!important}
+[data-mx=steps]::before{content:"";position:absolute;left:42px;top:30px;bottom:30px;width:1px;background:linear-gradient(#F46B3D,rgba(244,107,61,.25))}
+[data-mx=srow]{display:grid!important;grid-template-columns:84px minmax(0,1fr)!important;column-gap:18px!important;row-gap:6px!important;align-items:start!important;text-align:left!important}
+[data-mx=srow]>:first-child{grid-row:1 / span 3;width:84px!important;height:84px!important;min-width:84px;aspect-ratio:1!important;padding:0 6px!important;gap:2px!important;text-align:center}
+[data-mx=srow]>:first-child>span{font-size:11px!important;line-height:1.2!important}
+[data-mx=srow]>:first-child>span:nth-child(2){font-size:13px!important}
+[data-mx=srow]>:not(:first-child){grid-column:2;max-width:none!important;margin-top:0!important}
+[data-mx=srow]>:nth-child(2){padding-top:14px}
+[data-mx=srow]>:nth-child(2):last-child{padding-top:0;align-self:center;min-height:84px;display:flex;align-items:center}
+/* 사례 조건: 잘리지 않게 */
+[data-mx=cond]{width:100%!important;border-radius:18px!important;padding:12px 16px 12px 12px!important}
+[data-mx=cond]>span:nth-child(2){white-space:normal!important;overflow:visible!important;line-height:1.4}
+[data-mx=cond]>span:nth-child(3){display:none!important}
+/* 수업 흐름: 기기 테두리 걷어내고 카드만 */
+[data-mx=bezel]{padding:0!important;background:none!important;box-shadow:none!important;border-radius:0!important}
+[data-mx=bezel]>div{border-radius:20px!important}
+[data-mx=bezel]>div>div:first-child{padding:12px 16px!important}
+[data-mx=bezel]>div>div:first-child>span:nth-child(2){display:none!important}
+[data-mx=dhero]{min-height:0!important;padding-top:118px!important;padding-bottom:36px!important}
+[data-mx=dhero]>div{gap:40px!important}
+/* 메모 카드: 높이 줄이고 기울기 약하게 */
+[data-mx=memo]{min-height:0!important;padding:30px 22px 22px!important}
+/* 원칙·기준 카드 높이 */
+[data-mx=pcard]{min-height:0!important;gap:18px!important}
+[data-mx=sdcard]{min-height:0!important;padding:30px 22px!important}
+/* 상담 전 체크리스트: 2열 */
+[data-mx=prepgrid]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+[data-mx=prepgrid]>:last-child:nth-child(odd){grid-column:1 / -1}
+/* 전화 카드: 번호 한 줄 */
+[data-mx=call]{padding:22px 20px 22px 24px!important;gap:12px!important}
+[data-mx=call]>span:first-child>span:last-child{font-size:min(7.6vw,30px)!important;white-space:nowrap}
+[data-mx=call]>span:last-child{width:44px!important;height:44px!important}
+}
 </style>
 </helmet>
 
@@ -608,7 +666,7 @@ img,video{max-width:100%}
 <main style="display:flex;flex-direction:column">
 
 <sc-if value="{{ show.detailHero }}" hint-placeholder-val="{{ false }}">
-  <section data-tone="{{ dh.tone }}" style="position:relative;min-height:68svh;background:{{ dh.bg }};color:{{ dh.fg }};padding:clamp(120px,16svh,160px) clamp(20px,4vw,48px) 48px;display:flex">
+  <section data-mx="dhero" data-tone="{{ dh.tone }}" style="position:relative;min-height:68svh;background:{{ dh.bg }};color:{{ dh.fg }};padding:clamp(120px,16svh,160px) clamp(20px,4vw,48px) 48px;display:flex">
     <div style="max-width:1280px;width:100%;margin:0 auto;display:flex;flex-direction:column;justify-content:space-between;gap:56px">
       <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px 48px;flex:1">
         <div style="display:flex;align-items:flex-end;gap:clamp(16px,2vw,28px);min-width:0">
@@ -676,7 +734,7 @@ img,video{max-width:100%}
     <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:clamp(40px,6vw,96px);align-items:start">
       <div style="display:flex;flex-direction:column;gap:20px;max-width:600px">
         <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#E9472F">CONSULTATION</span>
-        <h2 data-rv="1" style="margin:0;font-size:clamp(32px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em">상담은 과정을 고르는 일이 아니라,<br>지금 필요한 것을 확인하는 일입니다.</h2>
+        <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(32px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em">상담은 과정을 고르는 일이 아니라,<br>지금 필요한 것을 확인하는 일입니다.</h2>
         <p data-rv="1" style="margin:0;font-size:17px;line-height:1.8;color:#55514F">현재 경력과 어려움을 느끼는 부분을 먼저 듣고, 그에 맞는 교육 방향을 함께 정리합니다.</p>
       </div>
       <div style="display:flex;flex-direction:column;border-top:1px solid #141414">
@@ -696,7 +754,7 @@ img,video{max-width:100%}
     <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(44px,5vw,72px)">
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
         <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#E9472F">BRAND</span>
-        <h2 data-rv="1" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em;flex-shrink:0">시술 브랜드에서 쌓은 경험을,<br>교육 브랜드로 정리했습니다.</h2>
+        <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em;flex-shrink:0">시술 브랜드에서 쌓은 경험을,<br>교육 브랜드로 정리했습니다.</h2>
         <p data-rv="1" style="margin:0;font-size:16px;line-height:1.75;color:#55514F;max-width:620px;flex-shrink:0">더봄뷰티는 고객을 위한 시술 브랜드로 시작했습니다. 아카데미는 그 현장에서 쌓인 기준을 실무자에게 전하는 교육 브랜드입니다.</p>
       </div>
       <div data-rv="1" style="position:relative;display:grid;grid-template-columns:{{ cols2s }};gap:12px">
@@ -735,7 +793,7 @@ img,video{max-width:100%}
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(40px,5vw,64px)">
         <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;max-width:640px">
           <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#E9472F">ACADEMY PHILOSOPHY</span>
-          <h2 data-rv="1" style="margin:0;font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.22;letter-spacing:-.045em">잘하는 기술보다,<br>판단할 수 있는 기준을<br>가르칩니다.</h2>
+          <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.22;letter-spacing:-.045em">잘하는 기술보다,<br>판단할 수 있는 기준을<br>가르칩니다.</h2>
           <p data-rv="1" style="margin:0;font-size:16px;line-height:1.8;color:#55514F">같은 눈썹이라도 조건이 다르면 접근도 달라집니다. 정해진 도안을 외우기보다, 왜 이 디자인을 선택하는지 판단하는 기준을 교육합니다.</p>
         </div>
         <div data-rv="1" style="position:relative;width:100%;max-width:520px;aspect-ratio:1;justify-self:center">
@@ -776,28 +834,28 @@ img,video{max-width:100%}
     <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(44px,5vw,72px)">
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
         <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#E9472F">EDUCATION PRINCIPLES</span>
-        <h2 data-rv="1" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em">수업을 운영하는 다섯 가지 원칙.</h2>
+        <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em">수업을 운영하는 다섯 가지 원칙.</h2>
         
       </div>
       <div style="display:flex;flex-direction:column;gap:18px">
       <div style="display:grid;grid-template-columns:{{ cols5c }};gap:12px;align-items:end">
-        <div data-rv="1" style="display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:calc(clamp(240px,22vw,300px) + 0 * clamp(20px,2.4vw,36px));padding:clamp(20px,2vw,28px);border-radius:22px;background:#FFFFFF;color:#141414;border:1px solid rgba(20,20,20,.12)">
+        <div data-rv="1" data-mx="pcard" style="display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:calc(clamp(240px,22vw,300px) + 0 * clamp(20px,2.4vw,36px));padding:clamp(20px,2vw,28px);border-radius:22px;background:#FFFFFF;color:#141414;border:1px solid rgba(20,20,20,.12)">
           <div style="display:flex;flex-direction:column;align-items:flex-start;gap:14px"><span style="font-family:'Inter Tight',sans-serif;font-size:clamp(44px,4.6vw,68px);font-weight:300;letter-spacing:-.05em;line-height:.85;color:#F46B3D">01</span><span style="font-family:'Inter Tight',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;padding:6px 9px;border-radius:999px;border:1px solid currentColor;opacity:.8;white-space:nowrap">CONDITION</span></div>
           <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:18px;font-weight:700;letter-spacing:-.03em">상태부터 봅니다</span><span style="font-size:14px;line-height:1.7;color:#55514F">디자인보다 먼저 얼굴, 피부, 기존 작업을 확인합니다.</span></div>
         </div>
-        <div data-rv="1" style="display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:calc(clamp(240px,22vw,300px) + 1 * clamp(20px,2.4vw,36px));padding:clamp(20px,2vw,28px);border-radius:22px;background:#FFFFFF;color:#141414;border:1px solid rgba(20,20,20,.12)">
+        <div data-rv="1" data-mx="pcard" style="display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:calc(clamp(240px,22vw,300px) + 1 * clamp(20px,2.4vw,36px));padding:clamp(20px,2vw,28px);border-radius:22px;background:#FFFFFF;color:#141414;border:1px solid rgba(20,20,20,.12)">
           <div style="display:flex;flex-direction:column;align-items:flex-start;gap:14px"><span style="font-family:'Inter Tight',sans-serif;font-size:clamp(44px,4.6vw,68px);font-weight:300;letter-spacing:-.05em;line-height:.85;color:#F46B3D">02</span><span style="font-family:'Inter Tight',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;padding:6px 9px;border-radius:999px;border:1px solid currentColor;opacity:.8;white-space:nowrap">REASON</span></div>
           <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:18px;font-weight:700;letter-spacing:-.03em">이유를 설명합니다</span><span style="font-size:14px;line-height:1.7;color:#55514F">왜 이 높이와 각도인지 말할 수 있도록 가르칩니다.</span></div>
         </div>
-        <div data-rv="1" style="display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:calc(clamp(240px,22vw,300px) + 2 * clamp(20px,2.4vw,36px));padding:clamp(20px,2vw,28px);border-radius:22px;background:#FBE8DF;color:#141414;border:1px solid #FBE8DF">
+        <div data-rv="1" data-mx="pcard" style="display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:calc(clamp(240px,22vw,300px) + 2 * clamp(20px,2.4vw,36px));padding:clamp(20px,2vw,28px);border-radius:22px;background:#FBE8DF;color:#141414;border:1px solid #FBE8DF">
           <div style="display:flex;flex-direction:column;align-items:flex-start;gap:14px"><span style="font-family:'Inter Tight',sans-serif;font-size:clamp(44px,4.6vw,68px);font-weight:300;letter-spacing:-.05em;line-height:.85;color:#E9472F">03</span><span style="font-family:'Inter Tight',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;padding:6px 9px;border-radius:999px;border:1px solid currentColor;opacity:.8;white-space:nowrap">HANDS-ON</span></div>
           <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:18px;font-weight:700;letter-spacing:-.03em">직접 해봅니다</span><span style="font-size:14px;line-height:1.7;color:#55514F">시범을 보는 것에서 끝나지 않고 직접 적용합니다.</span></div>
         </div>
-        <div data-rv="1" style="display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:calc(clamp(240px,22vw,300px) + 3 * clamp(20px,2.4vw,36px));padding:clamp(20px,2vw,28px);border-radius:22px;background:#F8D2BF;color:#141414;border:1px solid #F8D2BF">
+        <div data-rv="1" data-mx="pcard" style="display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:calc(clamp(240px,22vw,300px) + 3 * clamp(20px,2.4vw,36px));padding:clamp(20px,2vw,28px);border-radius:22px;background:#F8D2BF;color:#141414;border:1px solid #F8D2BF">
           <div style="display:flex;flex-direction:column;align-items:flex-start;gap:14px"><span style="font-family:'Inter Tight',sans-serif;font-size:clamp(44px,4.6vw,68px);font-weight:300;letter-spacing:-.05em;line-height:.85;color:#E9472F">04</span><span style="font-family:'Inter Tight',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;padding:6px 9px;border-radius:999px;border:1px solid currentColor;opacity:.8;white-space:nowrap">TIME</span></div>
           <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:18px;font-weight:700;letter-spacing:-.03em">시간 뒤를 봅니다</span><span style="font-size:14px;line-height:1.7;color:#3E3A38">작업 직후가 아니라 시간이 지난 뒤의 변화까지 고려합니다.</span></div>
         </div>
-        <div data-rv="1" style="display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:calc(clamp(240px,22vw,300px) + 4 * clamp(20px,2.4vw,36px));padding:clamp(20px,2vw,28px);border-radius:22px;background:#F46B3D;color:#FFFFFF;border:1px solid #F46B3D">
+        <div data-rv="1" data-mx="pcard" style="display:flex;flex-direction:column;justify-content:space-between;gap:28px;min-height:calc(clamp(240px,22vw,300px) + 4 * clamp(20px,2.4vw,36px));padding:clamp(20px,2vw,28px);border-radius:22px;background:#F46B3D;color:#FFFFFF;border:1px solid #F46B3D">
           <div style="display:flex;flex-direction:column;align-items:flex-start;gap:14px"><span style="font-family:'Inter Tight',sans-serif;font-size:clamp(44px,4.6vw,68px);font-weight:300;letter-spacing:-.05em;line-height:.85;color:#FFFFFF">05</span><span style="font-family:'Inter Tight',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;padding:6px 9px;border-radius:999px;border:1px solid currentColor;opacity:.8;white-space:nowrap">HONEST</span></div>
           <div style="display:flex;flex-direction:column;gap:10px"><span style="font-size:18px;font-weight:700;letter-spacing:-.03em">과장하지 않습니다</span><span style="font-size:14px;line-height:1.7;color:rgba(255,255,255,.9)">가능한 것과 어려운 것을 구분해 설명합니다.</span></div>
         </div>
@@ -813,11 +871,11 @@ img,video{max-width:100%}
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px">
         <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px">
           <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#E9472F">WHY THE BOMM</span>
-          <h2 data-rv="1" style="margin:0;font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.2;letter-spacing:-.045em">세 가지가 겹치는 곳에서,<br>기준이 만들어집니다.</h2>
+          <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.2;letter-spacing:-.045em">세 가지가 겹치는 곳에서,<br>기준이 만들어집니다.</h2>
         </div>
         <span style="font-size:11px;color:#8A8582">* 20년·70,000 수치는 실제 증빙 확인 후 최종 게시</span>
       </div>
-      <div style="position:relative;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;row-gap:16px">
+      <div data-mx="why" style="position:relative;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;row-gap:16px">
         <sc-for list="{{ why }}" as="w" hint-placeholder-count="3">
           <div data-rv="1" style="position:relative;z-index:{{ w.z }};flex:none;width:clamp(260px,28vw,380px);aspect-ratio:1;margin-left:{{ w.ml }};min-height:0;overflow:hidden;border-radius:50%;background:{{ w.bg }};color:{{ w.fg }};border:1px solid {{ w.bd }};mix-blend-mode:{{ w.blend }};display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:10%">
             <span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;white-space:nowrap;color:{{ w.nc }}">{{ w.n }} · {{ w.l }}</span>
@@ -841,14 +899,14 @@ img,video{max-width:100%}
 <sc-if value="{{ show.forWhom }}" hint-placeholder-val="{{ true }}">
   <section id="forwhom" data-tone="light" style="background:#FAF8F6;padding:clamp(100px,11vw,160px) clamp(20px,4vw,48px) clamp(48px,5vw,72px)">
     <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(40px,5vw,64px)">
-      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 22px;background:#FFFFFF;border:1px solid rgba(20,20,20,.1);border-radius:999px;max-width:760px;width:100%;margin:0 auto"><span style="font-family:'Inter Tight',sans-serif;font-size:10px;font-weight:700;letter-spacing:.24em;color:#55514F;flex:none">LEARNING PATH</span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:14px;height:14px;border-radius:50%;background:#F46B3D;box-shadow:0 0 0 5px rgba(244,107,61,.18)"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#141414">01 WHO</span><span style="font-size:12px;color:#141414">누구를 위한</span></span><span style="flex:1;min-width:24px;height:1px;background:rgba(20,20,20,.18)"></span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:10px;height:10px;border-radius:50%;border:1.5px solid rgba(20,20,20,.3)"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:rgba(20,20,20,.4)">02 COURSE</span><span style="font-size:12px;color:rgba(20,20,20,.4)">어떤 과정</span></span><span style="flex:1;min-width:24px;height:1px;background:rgba(20,20,20,.18)"></span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:10px;height:10px;border-radius:50%;border:1.5px solid rgba(20,20,20,.3)"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:rgba(20,20,20,.4)">03 SKILL</span><span style="font-size:12px;color:rgba(20,20,20,.4)">어떤 능력</span></span></div>
+      <div data-mx="lpath" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 22px;background:#FFFFFF;border:1px solid rgba(20,20,20,.1);border-radius:999px;max-width:760px;width:100%;margin:0 auto"><span style="font-family:'Inter Tight',sans-serif;font-size:10px;font-weight:700;letter-spacing:.24em;color:#55514F;flex:none">LEARNING PATH</span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:14px;height:14px;border-radius:50%;background:#F46B3D;box-shadow:0 0 0 5px rgba(244,107,61,.18)"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#141414">01 WHO</span><span style="font-size:12px;color:#141414">누구를 위한</span></span><span style="flex:1;min-width:24px;height:1px;background:rgba(20,20,20,.18)"></span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:10px;height:10px;border-radius:50%;border:1.5px solid rgba(20,20,20,.3)"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:rgba(20,20,20,.4)">02 COURSE</span><span style="font-size:12px;color:rgba(20,20,20,.4)">어떤 과정</span></span><span style="flex:1;min-width:24px;height:1px;background:rgba(20,20,20,.18)"></span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:10px;height:10px;border-radius:50%;border:1.5px solid rgba(20,20,20,.3)"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:rgba(20,20,20,.4)">03 SKILL</span><span style="font-size:12px;color:rgba(20,20,20,.4)">어떤 능력</span></span></div>
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px">
-        <h2 data-rv="1" style="margin:0;font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.2;letter-spacing:-.045em">지금 어디에 있든,<br>필요한 기준부터 다시 봅니다.</h2>
+        <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.2;letter-spacing:-.045em">지금 어디에 있든,<br>필요한 기준부터 다시 봅니다.</h2>
         <p data-rv="1" style="margin:0;font-size:16px;line-height:1.75;color:#55514F;max-width:440px">현재 위치를 고르면, 아래 커리큘럼에서 시작하기 좋은 과정이 바로 선택됩니다.</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px">
         <sc-for list="{{ forWhom }}" as="fw" hint-placeholder-count="4">
-          <button sc-camel-on-click="{{ fw.go }}" data-rv="1" style="all:unset;cursor:pointer;box-sizing:border-box;position:relative;display:flex;flex-direction:column;gap:16px;padding:28px 24px 24px;background:#FFFFFF;border:1px solid rgba(20,20,20,.1);border-radius:20px;min-height:280px;transition:border-color .3s,transform .3s" style-hover="border-color:#F46B3D;transform:translateY(-4px)">
+          <button data-mx="fwcard" sc-camel-on-click="{{ fw.go }}" data-rv="1" style="all:unset;cursor:pointer;box-sizing:border-box;position:relative;display:flex;flex-direction:column;gap:16px;padding:28px 24px 24px;background:#FFFFFF;border:1px solid rgba(20,20,20,.1);border-radius:20px;min-height:280px;transition:border-color .3s,transform .3s" style-hover="border-color:#F46B3D;transform:translateY(-4px)">
             <span style="display:flex;justify-content:space-between;align-items:center"><span style="width:44px;height:44px;border-radius:50%;background:#FBE8DF;color:#E9472F;display:flex;align-items:center;justify-content:center;font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:800">{{ fw.n }}</span><span style="font-family:'Inter Tight',sans-serif;font-size:10px;font-weight:700;letter-spacing:.2em;color:#8A8582">{{ fw.lv }}</span></span>
             <span style="font-size:21px;font-weight:700;letter-spacing:-.035em;line-height:1.35;white-space:pre-line">{{ fw.t }}</span>
             <span style="font-size:14px;line-height:1.7;color:#55514F">{{ fw.d }}</span>
@@ -865,7 +923,7 @@ img,video{max-width:100%}
     <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(44px,5vw,72px)">
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
         <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#E9472F">ACADEMY ENVIRONMENT</span>
-        <h2 data-rv="1" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em">배우는 공간도 현장과 같은 기준으로.</h2>
+        <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em">배우는 공간도 현장과 같은 기준으로.</h2>
         <p data-rv="1" style="margin:0;font-size:16px;line-height:1.75;color:#55514F;max-width:600px">실제 시술 환경과 같은 조건에서 이론, 시연, 실습이 이어집니다.</p>
       </div>
       <div style="display:grid;grid-template-columns:{{ cols4 }};gap:12px">
@@ -884,7 +942,7 @@ img,video{max-width:100%}
     <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(44px,5vw,72px)">
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
         <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#E9472F">COURSE OVERVIEW</span>
-        <h2 data-rv="1" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em">여섯 개의 과정, 한눈에 보기.</h2>
+        <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em">여섯 개의 과정, 한눈에 보기.</h2>
         <p data-rv="1" style="margin:0;font-size:16px;line-height:1.75;color:#55514F;max-width:600px">현재 위치에 따라 추천하는 과정을 표시했습니다. 과정을 누르면 상세 내용으로 이동합니다.</p>
       </div>
       <div data-rv="1" style="border-radius:24px;border:1px solid rgba(20,20,20,.1);overflow:hidden;background:#FFFFFF">
@@ -905,7 +963,7 @@ img,video{max-width:100%}
 <sc-if value="{{ show.curriculum }}" hint-placeholder-val="{{ true }}">
   <section id="programs" data-tone="light" style="background:#FAF8F6;padding:{{ curPadTop }} clamp(20px,4vw,48px) clamp(48px,5vw,72px)">
     <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(40px,5vw,72px)">
-      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 22px;background:#FFFFFF;border:1px solid rgba(20,20,20,.1);border-radius:999px;max-width:760px;width:100%;margin:0 auto"><span style="font-family:'Inter Tight',sans-serif;font-size:10px;font-weight:700;letter-spacing:.24em;color:#55514F;flex:none">LEARNING PATH</span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:10px;height:10px;border-radius:50%;background:#F46B3D"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#E9472F">01 WHO</span><span style="font-size:12px;color:#E9472F">누구를 위한</span></span><span style="flex:1;min-width:24px;height:1px;background:#F46B3D"></span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:14px;height:14px;border-radius:50%;background:#F46B3D;box-shadow:0 0 0 5px rgba(244,107,61,.18)"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#141414">02 COURSE</span><span style="font-size:12px;color:#141414">어떤 과정</span></span><span style="flex:1;min-width:24px;height:1px;background:rgba(20,20,20,.18)"></span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:10px;height:10px;border-radius:50%;border:1.5px solid rgba(20,20,20,.3)"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:rgba(20,20,20,.4)">03 SKILL</span><span style="font-size:12px;color:rgba(20,20,20,.4)">어떤 능력</span></span></div>
+      <div data-mx="lpath" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 22px;background:#FFFFFF;border:1px solid rgba(20,20,20,.1);border-radius:999px;max-width:760px;width:100%;margin:0 auto"><span style="font-family:'Inter Tight',sans-serif;font-size:10px;font-weight:700;letter-spacing:.24em;color:#55514F;flex:none">LEARNING PATH</span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:10px;height:10px;border-radius:50%;background:#F46B3D"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#E9472F">01 WHO</span><span style="font-size:12px;color:#E9472F">누구를 위한</span></span><span style="flex:1;min-width:24px;height:1px;background:#F46B3D"></span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:14px;height:14px;border-radius:50%;background:#F46B3D;box-shadow:0 0 0 5px rgba(244,107,61,.18)"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#141414">02 COURSE</span><span style="font-size:12px;color:#141414">어떤 과정</span></span><span style="flex:1;min-width:24px;height:1px;background:rgba(20,20,20,.18)"></span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:10px;height:10px;border-radius:50%;border:1.5px solid rgba(20,20,20,.3)"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:rgba(20,20,20,.4)">03 SKILL</span><span style="font-size:12px;color:rgba(20,20,20,.4)">어떤 능력</span></span></div>
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:20px">
         <div style="overflow:hidden;padding-bottom:.06em"><h2 data-rv="1" style="margin:0;font-family:'Inter Tight',sans-serif;font-size:clamp(52px,8vw,120px);font-weight:800;letter-spacing:-.06em;line-height:.86">CURRICULUM</h2></div>
         <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;max-width:520px">
@@ -989,11 +1047,21 @@ img,video{max-width:100%}
 <sc-if value="{{ show.learn }}" hint-placeholder-val="{{ true }}">
   <section id="learn" data-tone="light" style="background:#FAF8F6;padding:clamp(24px,3vw,40px) clamp(20px,4vw,48px) clamp(100px,11vw,160px)">
     <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(40px,5vw,64px)">
-      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 22px;background:#FFFFFF;border:1px solid rgba(20,20,20,.1);border-radius:999px;max-width:760px;width:100%;margin:0 auto"><span style="font-family:'Inter Tight',sans-serif;font-size:10px;font-weight:700;letter-spacing:.24em;color:#55514F;flex:none">LEARNING PATH</span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:10px;height:10px;border-radius:50%;background:#F46B3D"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#E9472F">01 WHO</span><span style="font-size:12px;color:#E9472F">누구를 위한</span></span><span style="flex:1;min-width:24px;height:1px;background:#F46B3D"></span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:10px;height:10px;border-radius:50%;background:#F46B3D"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#E9472F">02 COURSE</span><span style="font-size:12px;color:#E9472F">어떤 과정</span></span><span style="flex:1;min-width:24px;height:1px;background:#F46B3D"></span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:14px;height:14px;border-radius:50%;background:#F46B3D;box-shadow:0 0 0 5px rgba(244,107,61,.18)"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#141414">03 SKILL</span><span style="font-size:12px;color:#141414">어떤 능력</span></span></div>
-      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px"><h2 data-rv="1" style="margin:0;font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.2;letter-spacing:-.045em">기법은 달라도,<br>기준은 연결되어 있습니다.</h2>
+      <div data-mx="lpath" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 22px;background:#FFFFFF;border:1px solid rgba(20,20,20,.1);border-radius:999px;max-width:760px;width:100%;margin:0 auto"><span style="font-family:'Inter Tight',sans-serif;font-size:10px;font-weight:700;letter-spacing:.24em;color:#55514F;flex:none">LEARNING PATH</span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:10px;height:10px;border-radius:50%;background:#F46B3D"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#E9472F">01 WHO</span><span style="font-size:12px;color:#E9472F">누구를 위한</span></span><span style="flex:1;min-width:24px;height:1px;background:#F46B3D"></span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:10px;height:10px;border-radius:50%;background:#F46B3D"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#E9472F">02 COURSE</span><span style="font-size:12px;color:#E9472F">어떤 과정</span></span><span style="flex:1;min-width:24px;height:1px;background:#F46B3D"></span><span style="display:flex;align-items:center;gap:10px;flex:none"><span style="width:14px;height:14px;border-radius:50%;background:#F46B3D;box-shadow:0 0 0 5px rgba(244,107,61,.18)"></span><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#141414">03 SKILL</span><span style="font-size:12px;color:#141414">어떤 능력</span></span></div>
+      <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px"><h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.2;letter-spacing:-.045em">기법은 달라도,<br>기준은 연결되어 있습니다.</h2>
           <p style="margin:0;font-size:16px;line-height:1.75;color:#55514F;max-width:480px">여섯 개의 과정은 모두 같은 여섯 가지 능력을 중심으로 이어집니다.</p></div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:clamp(28px,3vw,40px)">
-        <div style="position:relative;width:100%;max-width:540px;aspect-ratio:1">
+        <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:10px;width:100%">
+            <sc-for list="{{ learn }}" as="l" hint-placeholder-count="6">
+              <div data-rv="1" style="display:grid;grid-template-columns:44px minmax(0,1fr);gap:14px;align-items:start;padding:18px;border-radius:16px;background:#FFFFFF;border:1px solid rgba(20,20,20,.08);text-align:left">
+                <span style="width:44px;height:44px;border-radius:50%;background:#F46B3D;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:800">{{ l.n }}</span>
+                <span style="display:flex;flex-direction:column;gap:6px;padding-top:2px"><span style="font-family:'Inter Tight',sans-serif;font-size:16px;font-weight:800;letter-spacing:-.01em">{{ l.en }}</span><span style="font-size:14px;line-height:1.65;color:#55514F">{{ l.flat }}</span></span>
+              </div>
+            </sc-for>
+          </div>
+        </sc-if>
+        <div data-mx="deskonly" style="position:relative;width:100%;max-width:540px;aspect-ratio:1">
           <div style="position:absolute;inset:6%;border-radius:50%;border:1px dashed rgba(244,107,61,.5)"></div>
           <sc-for list="{{ learn }}" as="l" hint-placeholder-count="6">
             <span style="position:absolute;left:50%;top:50%;width:38%;height:1px;background:{{ l.lineC }};transform-origin:0 50%;transform:rotate({{ l.deg }});transition:background .3s"></span>
@@ -1009,7 +1077,7 @@ img,video{max-width:100%}
             </button>
           </sc-for>
         </div>
-        <div style="display:flex;flex-direction:column;align-items:center;gap:20px;width:100%;max-width:620px;text-align:center">
+        <div data-mx="deskonly" style="display:flex;flex-direction:column;align-items:center;gap:20px;width:100%;max-width:620px;text-align:center">
           <div style="width:100%;padding:28px;background:#FFFFFF;border-radius:20px;border:1px solid rgba(20,20,20,.08);display:flex;flex-direction:column;align-items:center;gap:10px;min-height:150px">
             <span style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:700;letter-spacing:.2em;color:#F46B3D">SKILL {{ ls.n }}</span>
             <span style="font-family:'Inter Tight',sans-serif;font-size:clamp(24px,2.4vw,32px);font-weight:800;letter-spacing:-.04em">{{ ls.en }}</span>
@@ -1044,7 +1112,7 @@ img,video{max-width:100%}
         <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#E9472F">DIRECTOR / EDUCATOR</span>
         <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:clamp(36px,5vw,72px);font-weight:800;letter-spacing:-.05em;line-height:.95">JANG HYEONG GYEOM</span>
         <span style="font-size:14px;color:#55514F">장형겸 대표원장</span>
-        <h2 data-rv="1" style="margin:12px 0 0;font-size:clamp(22px,2.4vw,32px);font-weight:700;line-height:1.4;letter-spacing:-.04em">20년 동안 현장에서 얻은 답을,<br>교육에서는 이유와 함께 설명합니다.</h2>
+        <h2 data-rv="1" data-mx="kh2" style="margin:12px 0 0;font-size:clamp(22px,2.4vw,32px);font-weight:700;line-height:1.4;letter-spacing:-.04em">20년 동안 현장에서 얻은 답을,<br>교육에서는 이유와 함께 설명합니다.</h2>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr));gap:clamp(40px,6vw,96px);align-items:center">
         <div style="position:relative;width:100%;max-width:480px;justify-self:center">
@@ -1092,16 +1160,16 @@ img,video{max-width:100%}
     <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(48px,6vw,80px)">
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
         <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#F46B3D">PHILOSOPHY</span>
-        <h2 data-rv="1" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em;flex-shrink:0">안녕하세요, 더봄뷰티입니다.</h2>
+        <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em;flex-shrink:0">안녕하세요, 더봄뷰티입니다.</h2>
         <p data-rv="1" style="margin:0;font-size:16px;line-height:1.75;color:rgba(255,255,255,.7);flex-shrink:0">현장의 경험이 기준이 되고, 그 기준이 교육이 됩니다.</p>
       </div>
-      <div style="position:relative;display:grid;grid-template-columns:{{ cols3c }};gap:clamp(24px,3vw,48px)">
+      <div data-mx="steps" style="position:relative;display:grid;grid-template-columns:{{ cols3c }};gap:clamp(24px,3vw,48px)">
         <sc-if value="{{ notMobile }}" hint-placeholder-val="{{ true }}">
           <span style="position:absolute;left:16.66%;right:16.66%;top:clamp(75px,7.5vw,100px);height:1px;background:linear-gradient(90deg,rgba(255,255,255,.4),#F46B3D)"></span>
           <span style="position:absolute;left:33.33%;top:clamp(75px,7.5vw,100px);transform:translate(-50%,-50%);z-index:2;width:30px;height:30px;border-radius:50%;background:#141414;border:1px solid #F46B3D;color:#F46B3D;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">→</span>
           <span style="position:absolute;left:66.66%;top:clamp(75px,7.5vw,100px);transform:translate(-50%,-50%);z-index:2;width:30px;height:30px;border-radius:50%;background:#F46B3D;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800">→</span>
         </sc-if>
-        <div data-rv="1" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
+        <div data-rv="1" data-mx="srow" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
           <div style="position:relative;z-index:1;width:clamp(150px,15vw,200px);aspect-ratio:1;border-radius:50%;background:#141414;color:#FFFFFF;border:1.5px solid rgba(255,255,255,.5);display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:6px;padding:12%">
             <span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#F46B3D">01</span>
             <span style="font-family:'Inter Tight',sans-serif;font-size:clamp(18px,1.8vw,24px);font-weight:800;letter-spacing:-.03em">FIELD</span>
@@ -1109,7 +1177,7 @@ img,video{max-width:100%}
           </div>
           <span style="font-size:15px;line-height:1.7;color:rgba(255,255,255,.78);max-width:300px">K-Beauty 현장에서 축적해온 경험과 체계적인 교육을 바탕으로</span>
         </div>
-        <div data-rv="1" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
+        <div data-rv="1" data-mx="srow" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
           <div style="position:relative;z-index:1;width:clamp(150px,15vw,200px);aspect-ratio:1;border-radius:50%;background:#2A2624;color:#FFFFFF;border:1.5px solid #F46B3D;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:6px;padding:12%">
             <span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#F46B3D">02</span>
             <span style="font-family:'Inter Tight',sans-serif;font-size:clamp(18px,1.8vw,24px);font-weight:800;letter-spacing:-.03em">STANDARD</span>
@@ -1117,7 +1185,7 @@ img,video{max-width:100%}
           </div>
           <span style="font-size:15px;line-height:1.7;color:rgba(255,255,255,.78);max-width:300px">고객의 다양한 얼굴과 상태를 오랫동안 경험하며 쌓아온 디자인 기준과 실제 사례를 교육에 담고 있습니다.</span>
         </div>
-        <div data-rv="1" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
+        <div data-rv="1" data-mx="srow" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
           <div style="position:relative;z-index:1;width:clamp(150px,15vw,200px);aspect-ratio:1;border-radius:50%;background:#F46B3D;color:#FFFFFF;border:1.5px solid #F46B3D;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:6px;padding:12%">
             <span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#FFFFFF">03</span>
             <span style="font-family:'Inter Tight',sans-serif;font-size:clamp(18px,1.8vw,24px);font-weight:800;letter-spacing:-.03em">EDUCATION</span>
@@ -1136,16 +1204,16 @@ img,video{max-width:100%}
         <div style="overflow:hidden;padding-bottom:.06em"><h2 data-rv="1" style="margin:0;font-family:'Inter Tight',sans-serif;font-size:clamp(44px,5.4vw,72px);font-weight:800;letter-spacing:-.055em;line-height:.9">HOW WE TEACH</h2></div>
         <p data-rv="1" style="margin:0;font-size:clamp(18px,1.6vw,22px);font-weight:700;line-height:1.5;letter-spacing:-.03em">결과만 따라하지 않고,<br>판단하는 과정을 배웁니다.</p>
       </div>
-      <div style="position:relative;padding-bottom:{{ loopPad }};--c:clamp(96px,11vw,140px)">
+      <div data-mx="mwrap" style="position:relative;padding-bottom:{{ loopPad }};--c:clamp(96px,11vw,140px)">
         <sc-if value="{{ notMobile }}" hint-placeholder-val="{{ true }}">
           <span style="position:absolute;left:calc((100% - 3 * {{ mGap }}) / 8);right:calc((100% - 3 * {{ mGap }}) / 8);top:calc(var(--c) / 2);height:1px;background:rgba(20,20,20,.25)"></span>
           <div data-s="method" style="position:absolute;left:calc((100% - 3 * {{ mGap }}) / 8);top:calc(var(--c) / 2 - 1px);height:3px;width:0;max-width:calc(100% - (100% - 3 * {{ mGap }}) / 4);background:#F46B3D"></div>
           <div style="position:absolute;left:calc((100% - 3 * {{ mGap }}) / 8);right:calc((100% - 3 * {{ mGap }}) / 8);height:calc({{ loopPad }} - 20px);bottom:0;border:1.5px dashed rgba(244,107,61,.7);border-top:none;border-radius:0 0 48px 48px"></div>
           <span style="position:absolute;left:50%;bottom:-14px;transform:translateX(-50%);padding:6px 14px;border-radius:999px;background:#FAF8F6;border:1px solid #F46B3D;color:#E9472F;font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;white-space:nowrap">↺ REVIEW → 다음 케이스의 ANALYZE</span>
         </sc-if>
-        <div style="position:relative;display:grid;grid-template-columns:{{ mCols }};gap:{{ mGap }}">
+        <div data-mx="steps" style="position:relative;display:grid;grid-template-columns:{{ mCols }};gap:{{ mGap }}">
           <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
-            <div data-rv="1" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
+            <div data-rv="1" data-mx="srow" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
               <div style="position:relative;width:var(--c);height:var(--c);border-radius:50%;background:{{ s.bg }};color:{{ s.fg }};border:1.5px solid #141414;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px">
                 <span style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:700;color:{{ s.nc }}">{{ s.n }}</span>
                 <span style="font-family:'Inter Tight',sans-serif;font-size:clamp(14px,1.5vw,20px);font-weight:800;letter-spacing:-.03em">{{ s.en }}</span>
@@ -1168,13 +1236,13 @@ img,video{max-width:100%}
     <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(40px,5vw,64px)">
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:24px;max-width:680px">
         <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#E9472F">CASE-BASED EDUCATION</span>
-        <h2 data-rv="1" style="margin:0;font-size:clamp(30px,3.6vw,50px);font-weight:700;line-height:1.25;letter-spacing:-.045em">현장에서는, 교과서처럼<br>똑같은 얼굴을 만날 수 없습니다.</h2>
+        <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(30px,3.6vw,50px);font-weight:700;line-height:1.25;letter-spacing:-.045em">현장에서는, 교과서처럼<br>똑같은 얼굴을 만날 수 없습니다.</h2>
         <p data-rv="1" style="margin:0;font-size:17px;line-height:1.8;color:#55514F">실제 현장에서는 매번 다른 조건을 마주하게 됩니다. 그래서 더봄뷰티 아카데미는 하나의 성공 사례만 반복해서 보여주기보다, 서로 다른 상황을 보고 어떻게 판단해야 하는지를 함께 분석합니다.</p>
       </div>
       <div data-rv="1" style="display:flex;flex-direction:column;align-items:center;gap:10px;width:100%;max-width:760px">
         <span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;color:#55514F;margin-bottom:6px">5 CONDITIONS → 1 DECISION</span>
         <sc-for list="{{ conditions }}" as="cd" hint-placeholder-count="5">
-          <div style="width:{{ cd.w }};display:grid;grid-template-columns:36px 1fr auto;align-items:center;gap:14px;padding:14px 22px 14px 14px;border-radius:999px;background:{{ cd.bg }};border:1px solid {{ cd.bd }};text-align:left">
+          <div data-mx="cond" style="width:{{ cd.w }};display:grid;grid-template-columns:36px 1fr auto;align-items:center;gap:14px;padding:14px 22px 14px 14px;border-radius:999px;background:{{ cd.bg }};border:1px solid {{ cd.bd }};text-align:left">
             <span style="width:36px;height:36px;border-radius:50%;background:#FFFFFF;border:1.5px solid #F46B3D;color:#E9472F;display:flex;align-items:center;justify-content:center;font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:800">{{ cd.n }}</span>
             <span style="font-size:clamp(14px,1.3vw,17px);font-weight:700;letter-spacing:-.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ cd.t }}</span>
             <span style="font-family:'Inter Tight',sans-serif;font-size:10px;font-weight:700;letter-spacing:.14em;color:#8A8582;white-space:nowrap">{{ cd.en }}</span>
@@ -1195,22 +1263,22 @@ img,video{max-width:100%}
     <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(44px,5vw,72px)">
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
         <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#E9472F">HOW WE ANALYZE</span>
-        <h2 data-rv="1" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em">하나의 케이스는 이렇게 분석합니다.</h2>
+        <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em">하나의 케이스는 이렇게 분석합니다.</h2>
         
       </div>
-      <div style="position:relative;display:grid;grid-template-columns:{{ cols3c }};gap:clamp(20px,3vw,40px)">
+      <div data-mx="steps" style="position:relative;display:grid;grid-template-columns:{{ cols3c }};gap:clamp(20px,3vw,40px)">
         <sc-if value="{{ notMobile }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;left:{{ cols3cEdge }};right:{{ cols3cEdge }};top:clamp(55px,5.5vw,75px);height:1px;background:#F46B3D"></span></sc-if>
-        <div data-rv="1" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
+        <div data-rv="1" data-mx="srow" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
           <div style="position:relative;z-index:1;width:clamp(110px,11vw,150px);aspect-ratio:1;border-radius:50%;background:#FFFFFF;color:#141414;border:1.5px solid #141414;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:4px"><span style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:700;color:#F46B3D">01</span><span style="font-family:'Inter Tight',sans-serif;font-size:clamp(13px,1.3vw,17px);font-weight:800;letter-spacing:-.02em">RECORD</span></div>
           <span style="font-size:17px;font-weight:700;letter-spacing:-.02em">상태 기록</span>
           <span style="font-size:14px;line-height:1.7;color:#55514F;max-width:260px">상담 당시의 얼굴, 피부, 기존 작업 상태를 기록합니다.</span>
         </div>
-        <div data-rv="1" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
+        <div data-rv="1" data-mx="srow" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
           <div style="position:relative;z-index:1;width:clamp(110px,11vw,150px);aspect-ratio:1;border-radius:50%;background:#FBE8DF;color:#141414;border:1.5px solid #FBE8DF;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:4px"><span style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:700;color:#F46B3D">02</span><span style="font-family:'Inter Tight',sans-serif;font-size:clamp(13px,1.3vw,17px);font-weight:800;letter-spacing:-.02em">CHECK</span></div>
           <span style="font-size:17px;font-weight:700;letter-spacing:-.02em">확인 포인트</span>
           <span style="font-size:14px;line-height:1.7;color:#55514F;max-width:260px">디자인에 영향을 주는 요소를 항목별로 정리합니다.</span>
         </div>
-        <div data-rv="1" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
+        <div data-rv="1" data-mx="srow" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
           <div style="position:relative;z-index:1;width:clamp(110px,11vw,150px);aspect-ratio:1;border-radius:50%;background:#F46B3D;color:#FFFFFF;border:1.5px solid #F46B3D;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:4px"><span style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:700;color:#FFFFFF">03</span><span style="font-family:'Inter Tight',sans-serif;font-size:clamp(13px,1.3vw,17px);font-weight:800;letter-spacing:-.02em">STANDARD</span></div>
           <span style="font-size:17px;font-weight:700;letter-spacing:-.02em">교육 기준</span>
           <span style="font-size:14px;line-height:1.7;color:#55514F;max-width:260px">같은 상황에서 적용할 수 있는 판단 기준으로 연결합니다.</span>
@@ -1301,7 +1369,7 @@ img,video{max-width:100%}
     <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(44px,5vw,72px)">
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
         <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#E9472F">CLASS STRUCTURE</span>
-        <h2 data-rv="1" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em">하나의 수업은 네 개의 시간으로 나뉩니다.</h2>
+        <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em">하나의 수업은 네 개의 시간으로 나뉩니다.</h2>
         <p data-rv="1" style="margin:0;font-size:16px;line-height:1.75;color:#55514F;max-width:600px">이론에서 시작해 피드백으로 끝나는 구성은 모든 과정에 동일하게 적용됩니다.</p>
       </div>
       <div data-rv="1" style="display:grid;grid-template-columns:{{ cols4 }};gap:6px">
@@ -1325,9 +1393,9 @@ img,video{max-width:100%}
         <span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#55514F">ONE CLASS · 6 STEPS</span>
       </div>
       <div data-rv="1" style="position:relative;padding-right:{{ penPad }}">
-        <div style="position:absolute;left:6%;right:10%;bottom:-34px;height:50px;border-radius:50%;background:radial-gradient(closest-side,rgba(20,20,20,.25),rgba(20,20,20,0));filter:blur(8px)"></div>
-        <div style="position:relative;padding:clamp(12px,1.6vw,22px) clamp(14px,2vw,30px);border-radius:clamp(26px,3vw,42px);background:linear-gradient(150deg,#FBFAF8 0%,#E4E0DB 55%,#D3CEC8 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 0 0 1px #C4BFB9,0 50px 90px -40px rgba(20,20,20,.5)">
-          <span style="position:absolute;left:clamp(5px,.7vw,11px);top:50%;width:7px;height:7px;margin-top:-3px;border-radius:50%;background:#2B2A29;box-shadow:inset 0 0 0 2px #4A4846"></span>
+        <div data-mx="deskonly" style="position:absolute;left:6%;right:10%;bottom:-34px;height:50px;border-radius:50%;background:radial-gradient(closest-side,rgba(20,20,20,.25),rgba(20,20,20,0));filter:blur(8px)"></div>
+        <div data-mx="bezel" style="position:relative;padding:clamp(12px,1.6vw,22px) clamp(14px,2vw,30px);border-radius:clamp(26px,3vw,42px);background:linear-gradient(150deg,#FBFAF8 0%,#E4E0DB 55%,#D3CEC8 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 0 0 1px #C4BFB9,0 50px 90px -40px rgba(20,20,20,.5)">
+          <span data-mx="deskonly" style="position:absolute;left:clamp(5px,.7vw,11px);top:50%;width:7px;height:7px;margin-top:-3px;border-radius:50%;background:#2B2A29;box-shadow:inset 0 0 0 2px #4A4846"></span>
           <div style="position:relative;border-radius:clamp(12px,1.4vw,20px);overflow:hidden;background:#FFFFFF;box-shadow:inset 0 0 0 1px rgba(20,20,20,.12)">
             <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px clamp(16px,2vw,28px);border-bottom:1px solid rgba(20,20,20,.07);font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700">
               <span style="display:flex;align-items:center;gap:10px"><span style="width:8px;height:8px;border-radius:50%;background:#F46B3D"></span>THE BOMM CLASS</span>
@@ -1336,8 +1404,8 @@ img,video{max-width:100%}
             </div>
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr))">
               <div style="display:flex;flex-direction:column;gap:22px;padding:clamp(24px,3.4vw,52px)">
-                <h2 style="margin:0;font-size:clamp(26px,3vw,42px);font-weight:700;line-height:1.25;letter-spacing:-.045em">보고 끝나는 수업이 아니라,<br>직접 해보고 다시 봅니다.</h2>
-                <p style="margin:0;font-size:15px;line-height:1.7;color:#55514F">오른쪽 단계를 눌러 하루 수업의 흐름을 확인해 보세요.</p>
+                <h2 data-mx="kh2" style="margin:0;font-size:clamp(26px,3vw,42px);font-weight:700;line-height:1.25;letter-spacing:-.045em">보고 끝나는 수업이 아니라,<br>직접 해보고 다시 봅니다.</h2>
+                <p style="margin:0;font-size:15px;line-height:1.7;color:#55514F">{{ pHint }}</p>
                 <div style="margin-top:auto;position:relative;display:flex;flex-direction:column;gap:10px;padding:clamp(20px,2.2vw,28px);border-radius:18px;background:#F46B3D;color:#FFFFFF;overflow:hidden">
                   <span style="position:absolute;right:-30px;top:-30px;width:150px;height:150px;border-radius:50%;border:1px solid rgba(255,255,255,.35)"></span>
                   <span style="position:absolute;right:20px;top:20px;width:50px;height:50px;border-radius:50%;background:rgba(255,255,255,.18)"></span>
@@ -1394,22 +1462,22 @@ img,video{max-width:100%}
     <div style="max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(44px,5vw,72px)">
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
         <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#E9472F">FEEDBACK SYSTEM</span>
-        <h2 data-rv="1" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em">피드백은 세 번 이루어집니다.</h2>
+        <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em">피드백은 세 번 이루어집니다.</h2>
         
       </div>
-      <div style="position:relative;display:grid;grid-template-columns:{{ cols3c }};gap:clamp(20px,3vw,40px)">
+      <div data-mx="steps" style="position:relative;display:grid;grid-template-columns:{{ cols3c }};gap:clamp(20px,3vw,40px)">
         <sc-if value="{{ notMobile }}" hint-placeholder-val="{{ true }}"><span style="position:absolute;left:{{ cols3cEdge }};right:{{ cols3cEdge }};top:clamp(55px,5.5vw,75px);height:1px;background:#F46B3D"></span></sc-if>
-        <div data-rv="1" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
+        <div data-rv="1" data-mx="srow" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
           <div style="position:relative;z-index:1;width:clamp(110px,11vw,150px);aspect-ratio:1;border-radius:50%;background:#FFFFFF;color:#141414;border:1.5px solid #141414;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:4px"><span style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:700;color:#F46B3D">01</span><span style="font-family:'Inter Tight',sans-serif;font-size:clamp(13px,1.3vw,17px);font-weight:800;letter-spacing:-.02em">IN CLASS</span></div>
           <span style="font-size:17px;font-weight:700;letter-spacing:-.02em">수업 중</span>
           <span style="font-size:14px;line-height:1.7;color:#55514F;max-width:260px">디자인과 적용 과정에서 바로 확인하고 수정합니다.</span>
         </div>
-        <div data-rv="1" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
+        <div data-rv="1" data-mx="srow" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
           <div style="position:relative;z-index:1;width:clamp(110px,11vw,150px);aspect-ratio:1;border-radius:50%;background:#FBE8DF;color:#141414;border:1.5px solid #FBE8DF;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:4px"><span style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:700;color:#F46B3D">02</span><span style="font-family:'Inter Tight',sans-serif;font-size:clamp(13px,1.3vw,17px);font-weight:800;letter-spacing:-.02em">AFTER MODEL</span></div>
           <span style="font-size:17px;font-weight:700;letter-spacing:-.02em">모델 실습 후</span>
           <span style="font-size:14px;line-height:1.7;color:#55514F;max-width:260px">실습 결과를 함께 보며 판단이 맞았던 부분을 정리합니다.</span>
         </div>
-        <div data-rv="1" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
+        <div data-rv="1" data-mx="srow" style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px">
           <div style="position:relative;z-index:1;width:clamp(110px,11vw,150px);aspect-ratio:1;border-radius:50%;background:#F46B3D;color:#FFFFFF;border:1.5px solid #F46B3D;display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:4px"><span style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:700;color:#FFFFFF">03</span><span style="font-family:'Inter Tight',sans-serif;font-size:clamp(13px,1.3vw,17px);font-weight:800;letter-spacing:-.02em">CASE REVIEW</span></div>
           <span style="font-size:17px;font-weight:700;letter-spacing:-.02em">수료 후</span>
           <span style="font-size:14px;line-height:1.7;color:#55514F;max-width:260px">시간이 지난 결과를 다시 보며 케이스를 리뷰합니다. [운영 방식 확인 후 입력]</span>
@@ -1509,11 +1577,11 @@ img,video{max-width:100%}
     <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(48px,6vw,72px)">
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
         <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#E9472F">EDUCATOR'S STANDARD</span>
-        <h2 data-rv="1" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em">교육에서 가장 중요하게 보는<br>네 가지 기준.</h2>
+        <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em">교육에서 가장 중요하게 보는<br>네 가지 기준.</h2>
       </div>
       <div data-rv="1" style="position:relative;display:grid;grid-template-columns:{{ cols2s }};gap:12px">
         <sc-for list="{{ standards }}" as="sd" hint-placeholder-count="4">
-          <div style="display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:12px;min-height:clamp(220px,22vw,280px);padding:clamp(28px,3vw,44px) clamp(28px,6vw,90px);background:{{ sd.bg }};color:{{ sd.fg }};border-radius:{{ sd.r }}">
+          <div data-mx="sdcard" style="display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:center;gap:12px;min-height:clamp(220px,22vw,280px);padding:clamp(28px,3vw,44px) clamp(28px,6vw,90px);background:{{ sd.bg }};color:{{ sd.fg }};border-radius:{{ sd.r }}">
             <span style="font-family:'Inter Tight',sans-serif;font-size:clamp(36px,4vw,56px);font-weight:800;letter-spacing:-.05em;line-height:1;color:{{ sd.nc }}">{{ sd.n }}</span>
             <span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;opacity:.7">{{ sd.en }}</span>
             <span style="font-size:clamp(18px,1.7vw,22px);font-weight:700;letter-spacing:-.03em">{{ sd.t }}</span>
@@ -1632,13 +1700,13 @@ img,video{max-width:100%}
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px">
         <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px">
           <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#E9472F">COURSE GUIDE</span>
-          <h2 data-rv="1" style="margin:0;font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.2;letter-spacing:-.045em">어떤 과정부터 시작해야 할지<br>모르겠다면.</h2>
+          <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.2;letter-spacing:-.045em">어떤 과정부터 시작해야 할지<br>모르겠다면.</h2>
         </div>
         <span style="font-size:14px;font-weight:600;color:#55514F">나에게 해당하는 메모를 눌러보세요 ↓</span>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:clamp(20px,2.4vw,32px);padding:12px 4px">
         <sc-for list="{{ guide }}" as="gd" hint-placeholder-count="4">
-          <button sc-camel-on-click="{{ gd.pick }}" style="all:unset;cursor:pointer;box-sizing:border-box;position:relative;display:flex;flex-direction:column;gap:14px;padding:36px 26px 26px;min-height:300px;background:{{ gd.bg }};color:{{ gd.fg }};transform:rotate({{ gd.rot }});box-shadow:0 22px 34px -20px rgba(20,20,20,.38);transition:transform .35s cubic-bezier(.2,.7,0,1)" style-hover="transform:rotate(0deg) translateY(-6px)">
+          <button data-mx="memo" sc-camel-on-click="{{ gd.pick }}" style="all:unset;cursor:pointer;box-sizing:border-box;position:relative;display:flex;flex-direction:column;gap:14px;padding:36px 26px 26px;min-height:300px;background:{{ gd.bg }};color:{{ gd.fg }};transform:rotate({{ gd.rot }});box-shadow:0 22px 34px -20px rgba(20,20,20,.38);transition:transform .35s cubic-bezier(.2,.7,0,1)" style-hover="transform:rotate(0deg) translateY(-6px)">
             <span style="position:absolute;left:50%;top:-9px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:{{ gd.pin }};box-shadow:0 3px 5px rgba(20,20,20,.3)"></span>
             <span style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:700;letter-spacing:.18em;opacity:.7">MEMO {{ gd.n }}</span>
             <span style="font-size:clamp(20px,1.9vw,25px);font-weight:700;letter-spacing:-.035em;line-height:1.3;white-space:pre-line">{{ gd.t }}</span>
@@ -1663,12 +1731,12 @@ img,video{max-width:100%}
     <div style="max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(40px,5vw,64px)">
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
         <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#E9472F">BEFORE CONSULTATION</span>
-        <h2 data-rv="1" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em;flex-shrink:0">상담 전에<br>정리해 두면 좋은 내용.</h2>
+        <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(30px,3.8vw,52px);font-weight:700;line-height:1.25;letter-spacing:-.045em;flex-shrink:0">상담 전에<br>정리해 두면 좋은 내용.</h2>
         
       </div>
       <div data-rv="1" style="position:relative;padding:clamp(40px,4vw,56px) clamp(20px,3vw,40px) clamp(24px,3vw,40px);border-radius:28px;background:#FAF8F6;border:1px solid rgba(20,20,20,.08)">
         <span style="position:absolute;left:50%;top:-18px;transform:translateX(-50%);padding:10px 22px;border-radius:999px;background:#141414;color:#FFFFFF;font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;white-space:nowrap">CHECKLIST · 5</span>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:12px">
+        <div data-mx="prepgrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,170px),1fr));gap:12px">
           <sc-for list="{{ prep }}" as="pp" hint-placeholder-count="5">
             <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:24px 14px;border-radius:18px;background:#FFFFFF;border:1px solid rgba(20,20,20,.08)">
               <span style="width:40px;height:40px;border-radius:12px;background:{{ pp.bg }};border:1.5px solid #F46B3D;color:{{ pp.fg }};display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900">✓</span>
@@ -1688,11 +1756,36 @@ img,video{max-width:100%}
       <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px">
         <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
           <span style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#E9472F">FAQ</span>
-          <h2 data-rv="1" style="margin:0;font-size:clamp(30px,3.6vw,50px);font-weight:700;line-height:1.25;letter-spacing:-.045em">상담 전 궁금한 내용</h2>
+          <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(30px,3.6vw,50px);font-weight:700;line-height:1.25;letter-spacing:-.045em">상담 전 궁금한 내용</h2>
         </div>
-        <span style="font-size:14px;font-weight:600;color:#55514F">왼쪽 질문을 누르면 답변이 바로 보입니다.</span>
+        <span style="font-size:14px;font-weight:600;color:#55514F">{{ faqHint }}</span>
       </div>
-      <div data-rv="1" style="background:#141414;border-radius:clamp(22px,2.6vw,36px);padding:clamp(12px,1.4vw,20px);box-shadow:0 40px 80px -40px rgba(20,20,20,.45)">
+      <sc-if value="{{ mobile }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;flex-direction:column;border-top:1.5px solid #141414">
+            <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="10">
+              <div style="border-bottom:1px solid rgba(20,20,20,.12)">
+                <button sc-camel-on-click="{{ f.toggleM }}" style="all:unset;cursor:pointer;box-sizing:border-box;width:100%;display:grid;grid-template-columns:38px minmax(0,1fr) 28px;gap:8px;align-items:center;padding:18px 0">
+                  <span style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:800;color:{{ f.numM }}">Q.{{ f.n }}</span>
+                  <span style="font-size:16px;font-weight:700;letter-spacing:-.025em;line-height:1.45;color:#141414">{{ f.q }}</span>
+                  <span style="justify-self:end;width:28px;height:28px;border-radius:50%;background:{{ f.plusBg }};color:{{ f.plusFg }};display:flex;align-items:center;justify-content:center;font-size:17px;line-height:1;transform:rotate({{ f.rot }});transition:transform .3s,background .3s">+</span>
+                </button>
+                <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
+                  <div style="display:flex;gap:12px;margin:0 0 18px;padding:18px;border-radius:14px;background:#FFFFFF;border:1px solid rgba(20,20,20,.06)">
+                    <span style="flex:none;width:28px;height:28px;border-radius:50%;background:#141414;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:800">A</span>
+                    <span style="font-size:15px;line-height:1.75;color:#8A8582">[확인 후 입력] — 실제 정책 자료를 받은 뒤 답변을 게시합니다.</span>
+                  </div>
+                </sc-if>
+              </div>
+            </sc-for>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:12px;padding:22px 20px;border-radius:18px;background:#141414;color:#FFFFFF;text-align:center">
+            <span style="font-size:15px;line-height:1.6">더 궁금한 점은 상담으로 바로 확인하세요.</span>
+            <button sc-camel-on-click="{{ goApplyForm }}" style="all:unset;cursor:pointer;padding:13px 22px;border-radius:999px;background:#E9472F;color:#fff;font-size:15px;font-weight:700">상담 연락하기 →</button>
+          </div>
+        </div>
+      </sc-if>
+      <div data-rv="1" data-mx="deskonly" style="background:#141414;border-radius:clamp(22px,2.6vw,36px);padding:clamp(12px,1.4vw,20px);box-shadow:0 40px 80px -40px rgba(20,20,20,.45)">
         <div style="background:#FFFFFF;border-radius:clamp(12px,1.6vw,22px);overflow:hidden;display:flex;flex-direction:column">
           <div style="display:flex;justify-content:space-between;align-items:center;padding:16px clamp(18px,2.4vw,32px);border-bottom:1px solid rgba(20,20,20,.08);font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em">
             <span style="display:flex;align-items:center;gap:10px"><span style="width:8px;height:8px;border-radius:50%;background:#F46B3D"></span>THE BOMM · FAQ</span><span style="color:#8A8582">{{ fq.n }} / 10</span>
@@ -1730,11 +1823,11 @@ img,video{max-width:100%}
     <div style="max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:clamp(40px,6vw,104px);align-items:center">
       <div style="display:flex;flex-direction:column;gap:28px">
         <span data-rv="1" style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#F46B3D">ACADEMY CONTACT</span>
-        <h2 data-rv="1" style="margin:0;font-size:clamp(30px,3.4vw,48px);font-weight:700;line-height:1.3;letter-spacing:-.045em">어떤 기술을 배울지보다,<br>지금 무엇이 필요한지부터<br>확인합니다.</h2>
+        <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(30px,3.4vw,48px);font-weight:700;line-height:1.3;letter-spacing:-.045em">어떤 기술을 배울지보다,<br>지금 무엇이 필요한지부터<br>확인합니다.</h2>
         <p data-rv="1" style="margin:0;font-size:16px;line-height:1.8;color:rgba(255,255,255,.72);max-width:460px">현재 경력, 배우고 싶은 기술, 어려움을 느끼는 부분을 알려주시면 상담을 통해 적합한 교육 방향을 안내합니다.</p>
       </div>
       <div style="display:flex;flex-direction:column;gap:12px">
-        <a href="tel:01041312490" style="display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px 28px 28px 32px;border-radius:24px;background:#F46B3D;color:#FFFFFF" style-hover="background:#E9472F;color:#FFFFFF">
+        <a data-mx="call" href="tel:01041312490" style="display:flex;justify-content:space-between;align-items:center;gap:20px;padding:28px 28px 28px 32px;border-radius:24px;background:#F46B3D;color:#FFFFFF" style-hover="background:#E9472F;color:#FFFFFF">
           <span style="display:flex;flex-direction:column;gap:8px"><span style="font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;letter-spacing:.24em">CALL · 전화 상담</span><span style="font-family:'Inter Tight',sans-serif;font-size:clamp(30px,3.4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1">010-4131-2490</span></span>
           <span style="flex:none;width:56px;height:56px;border-radius:50%;background:#FFFFFF;color:#141414;display:flex;align-items:center;justify-content:center;font-size:20px">→</span>
         </a>
@@ -1757,7 +1850,7 @@ img,video{max-width:100%}
     <div style="max-width:1280px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:40px">
       <div style="display:flex;flex-direction:column;gap:20px">
         <span style="font-family:'Inter Tight',sans-serif;font-size:12px;font-weight:600;letter-spacing:.26em;color:#E9472F">NEXT STEP</span>
-        <h2 data-rv="1" style="margin:0;font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.25;letter-spacing:-.045em;white-space:pre-line">{{ cta.t }}</h2>
+        <h2 data-rv="1" data-mx="kh2" style="margin:0;font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.25;letter-spacing:-.045em;white-space:pre-line">{{ cta.t }}</h2>
       </div>
       <div style="display:flex;gap:10px">
         <button sc-camel-on-click="{{ cta.go }}" style="all:unset;cursor:pointer;padding:18px 28px;background:#141414;color:#fff;font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:700;letter-spacing:.12em">{{ cta.b }}</button>
@@ -1869,7 +1962,7 @@ class Component extends DCLogic {
       const g = document.querySelector('[data-g=gyro]'), w = document.querySelector('[data-g=wrap]');
       if (!g || !w) return;
       const t = now / 1000, c = this.gc; c.x += (this.gm.x - c.x) * .06; c.y += (this.gm.y - c.y) * .06;
-      const sc = Math.min(1, innerWidth * .5 / 500, innerHeight * .72 / 500);
+      const sc = innerWidth < 760 ? Math.min(.86, innerWidth * .9 / 500, innerHeight * .42 / 500) : Math.min(1, innerWidth * .5 / 500, innerHeight * .72 / 500);
       w.style.transform = `translate(${c.x * -24}px,${c.y * -24}px) scale(${sc * (this.gScroll || 1)})`;
       g.style.transform = `rotateZ(14deg) rotateX(${-16 - c.y * 50}deg) rotateY(${t * 16 + c.x * 70}deg)`;
     };
@@ -2055,7 +2148,7 @@ class Component extends DCLogic {
         bar: i <= s.pStep ? '#F46B3D' : 'rgba(244,241,236,.18)', pick: () => { this.pHold = true; this.setState({ pStep: i }); } };
     });
     const faqs = ['교육 기간은 어떻게 구성되나요?', '처음 배우는 사람도 가능한가요?', '현직 원장도 수강할 수 있나요?', '모델 실습이 포함되나요?', '1:1 피드백은 어떻게 진행되나요?', '특정 기술만 선택해서 배울 수 있나요?', '수정·복원 과정만 별도로 배울 수 있나요?', '교육 비용은 어떻게 확인하나요?', '수업 일정은 어떻게 정해지나요?', '재교육 또는 보완 교육이 가능한가요?']
-      .map((q, i) => { const o = s.faq === i; return { q, n: String(i + 1).padStart(2, '0'), open: o, rot: o ? '45deg' : '0deg', toggle: () => this.setState({ faq: i }), numC: o ? '#F46B3D' : '#8A8582', arrowOp: o ? 1 : 0,
+      .map((q, i) => { const o = s.faq === i; return { q, n: String(i + 1).padStart(2, '0'), open: o, rot: o ? '45deg' : '0deg', toggle: () => this.setState({ faq: i }), toggleM: () => this.setState({ faq: o ? -1 : i }), numM: o ? '#E9472F' : '#8A8582', plusBg: o ? '#E9472F' : '#FFFFFF', plusFg: o ? '#FFFFFF' : '#141414', numC: o ? '#F46B3D' : '#8A8582', arrowOp: o ? 1 : 0,
         bg: o ? '#141414' : 'transparent', fg: o ? '#FFFFFF' : '#141414', bd: o ? '#141414' : 'rgba(20,20,20,.12)', bd2: o ? 'rgba(255,255,255,.4)' : 'rgba(20,20,20,.25)',
         tagBg: o ? '#F46B3D' : '#FBE8DF', tagFg: o ? '#FFFFFF' : '#E9472F' }; });
 
@@ -2085,13 +2178,13 @@ class Component extends DCLogic {
       heroBg: H.bg, heroRgb: H.rgb, heroInk: H.dark ? '#FFFFFF' : '#141414',
       heroImgSmall: hi === 0 && !s.mobile, heroMarquee: hi === 0,
       heroName: H.name, heroPhotoCols: s.mobile ? 'repeat(2,minmax(0,1fr))' : 'repeat(4,minmax(0,1fr))', heroVideoEl: this.props.heroVideo ? React.createElement('video', { src: this.props.heroVideo, autoPlay: true, muted: true, loop: true, playsInline: true, preload: 'auto', ref: el => { if (el && !el._m) { el._m = 1; el.muted = true; el.defaultMuted = true; el.setAttribute('muted', ''); el.play().catch(() => {}); } }, style: { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' } }) : null,
-      heroCopyBottom: (s.mobile || s.narrow) ? 'calc(clamp(28px,5svh,46px) + clamp(76px,min(17vw,30svh),280px) + 20px)' : 'clamp(28px,5svh,46px)',
+      heroCopyBottom: s.mobile ? 'calc(clamp(28px,5svh,46px) + min(25vw,12.5svh) * .8 + 26px)' : s.narrow ? 'calc(clamp(28px,5svh,46px) + clamp(76px,min(17vw,30svh),280px) + 20px)' : 'clamp(28px,5svh,46px)',
       heroRings: (() => { const o = []; for (let i = 0; i < 12; i++) o.push({ tf: `rotateY(${i * 15}deg)`, c: i % 3 === 0 ? '#F46B3D' : 'rgba(244,107,61,.32)', w: i % 3 === 0 ? '1.5px' : '1px' }); [-55, -25, 0, 25, 55].forEach(l => { const r = l * Math.PI / 180; o.push({ tf: `translateY(${(-Math.sin(r) * 250).toFixed(1)}px) rotateX(90deg) scale(${Math.cos(r).toFixed(3)})`, c: l === 0 ? 'rgba(255,255,255,.7)' : 'rgba(244,107,61,.32)', w: '1px' }); }); return o; })(),
       heroOpts: HEROES.map((h, i) => ({ n: h.n, name: h.name, bg: i === hi ? '#F46B3D' : 'transparent', fg: i === hi ? '#FFFFFF' : '#141414', pick: () => { this.setState({ heroV: h.name }); scrollTo(0, 0); } })),
       goHome: go('home'), toTop: () => scrollTo({ top: 0, behavior: 'smooth' }), fabOp: s.fab ? 1 : 0, fabY: s.fab ? '0px' : '16px', fabPe: s.fab ? 'auto' : 'none', goApply: go('apply'), goCurriculum: go('curriculum'), goDirector: go('director'), goApplyForm: applyTarget(),
       keys: [['SEE', '본다'], ['THINK', '생각한다'], ['DESIGN', '설계한다'], ['REVIEW', '다시 본다']].map(([t, kr], i) => ({ t, kr, n: '0' + (i + 1), bg: i === 2 ? '#F46B3D' : i === 3 ? '#141414' : '#FFFFFF', fg: i >= 2 ? '#FFFFFF' : '#141414', nc: i >= 2 ? '#FFFFFF' : '#F46B3D' })),
       philVars: [['FACE', '얼굴형·골격'], ['HAIR', '기존 모량·결'], ['SKIN', '피부 상태'], ['PIGMENT', '잔흔 유무'], ['IMPRESSION', '원하는 인상']].map(([en, kr], i) => { const ang = -90 + i * 72, r = ang * Math.PI / 180; return { en, kr, deg: ang + 'deg', x: (50 + 40 * Math.cos(r)).toFixed(2) + '%', y: (50 + 40 * Math.sin(r)).toFixed(2) + '%' }; }),
-      pPrev: () => { this.pHold = true; this.setState({ pStep: Math.max(0, s.pStep - 1) }); }, pNext: () => { this.pHold = true; this.setState({ pStep: Math.min(5, s.pStep + 1) }); }, pPct: Math.round((s.pStep + 1) / 6 * 100) + '%', penPad: s.mobile ? '0px' : '34px',
+      pPrev: () => { this.pHold = true; this.setState({ pStep: Math.max(0, s.pStep - 1) }); }, pNext: () => { this.pHold = true; this.setState({ pStep: Math.min(5, s.pStep + 1) }); }, pPct: Math.round((s.pStep + 1) / 6 * 100) + '%', pHint: s.mobile ? '아래 단계를 눌러 하루 수업의 흐름을 확인해 보세요.' : '오른쪽 단계를 눌러 하루 수업의 흐름을 확인해 보세요.', faqHint: s.mobile ? '질문을 누르면 바로 아래에 답변이 열립니다.' : '왼쪽 질문을 누르면 답변이 바로 보입니다.', penPad: s.mobile ? '0px' : '34px',
       why: ((a) => a.map((w, i) => ({ ...w, ml: i && !s.mobile ? 'calc(-1 * clamp(48px,5vw,80px))' : '0px', z: i, bg: ['rgba(255,255,255,.7)', '#FBE8DF', '#F46B3D'][i], fg: i === 2 ? '#FFFFFF' : '#141414', bd: i === 0 ? '#141414' : 'transparent', blend: i === 2 ? 'multiply' : 'normal', nc: i === 2 ? '#FFFFFF' : '#E9472F', dot: ['#FFFFFF', '#FBE8DF', '#F46B3D'][i] })))([
         { n: '01', v: '20+', l: 'YEARS', t: '현장에서 축적된 경험', d: '다양한 연령과 얼굴, 기존 작업 상태, 신규 디자인과 수정 케이스를 경험하며 쌓아온 기준을 교육 과정에 반영합니다.' },
         { n: '02', v: '70,000', l: 'CLIENT VISITS', t: '다양한 실제 케이스', d: '한 가지 형태를 반복해서 가르치기보다 다양한 실제 사례를 통해 상황별 접근 방법을 살펴봅니다.' },
