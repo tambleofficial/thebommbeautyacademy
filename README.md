@@ -19,3 +19,7 @@
 ## 배포 후
 - Google Search Console / 네이버 서치어드바이저에 https://thebommbeautyacademy.com/sitemap.xml 제출
 - 도메인이 다르면 index.html, sitemap.xml, robots.txt, rss.xml 안의 thebommbeautyacademy.com 을 실제 주소로 바꿔주세요.
+
+## 관리자
+- 편집 모드: /edit (비밀번호 로그인) — 화면의 글자는 눌러서 고치고, 사진은 눌러서 바꿉니다.
+- 바꾼 내용은 content/text.json, content/media.json 에 저장됩니다.
