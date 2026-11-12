@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>THE BOMM BEAUTY ACADEMY | 더봄뷰티 아카데미</title>
+    <link>https://thebommbeautyacademy.com/</link>
+    <atom:link href="https://thebommbeautyacademy.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <description>20년의 현장 경험을 교육의 기준으로 만듭니다. 반영구 전문 교육 — 더봄뷰티 아카데미</description>
+    <language>ko-KR</language>
+    <lastBuildDate>Mon, 19 Oct 2026 09:00:00 +0900</lastBuildDate>
+    <item>
+      <title>ACADEMY — 아카데미 소개</title>
+      <link>https://thebommbeautyacademy.com/academy</link>
+      <guid isPermaLink="true">https://thebommbeautyacademy.com/academy</guid>
+      <description>현장에서 쌓은 판단 기준을 교육으로 정리하는 더봄뷰티 아카데미의 철학과 원칙.</description>
+      <pubDate>Mon, 19 Oct 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>CURRICULUM — 교육과정</title>
+      <link>https://thebommbeautyacademy.com/curriculum</link>
+      <guid isPermaLink="true">https://thebommbeautyacademy.com/curriculum</guid>
+      <description>눈썹 디자인, 헤어스트록, 입술, 아이라인, SMP, 기존 반영구 수정·복원까지 여섯 개의 과정과 진행 방식.</description>
+      <pubDate>Mon, 19 Oct 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>CASE LAB — 케이스 분석</title>
+      <link>https://thebommbeautyacademy.com/caselab</link>
+      <guid isPermaLink="true">https://thebommbeautyacademy.com/caselab</guid>
+      <description>실전에서 마주치는 문제를 문제 · 확인 포인트 · 교육 기준으로 분석합니다.</description>
+      <pubDate>Mon, 19 Oct 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>CASE 001 — 남자눈썹은 왜 다른 기준으로 접근해야 할까?</title>
+      <link>https://thebommbeautyacademy.com/caselab#case-men</link>
+      <guid isPermaLink="true">https://thebommbeautyacademy.com/caselab#case-men</guid>
+      <description>골격, 모량, 각도, 인상, 평소 스타일을 기준으로 남자눈썹 디자인을 분석합니다.</description>
+      <pubDate>Mon, 19 Oct 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>CASE 002 — 기존 잔흔이 있다면 새 디자인부터 그리면 안 되는 이유</title>
+      <link>https://thebommbeautyacademy.com/caselab#case-pig</link>
+      <guid isPermaLink="true">https://thebommbeautyacademy.com/caselab#case-pig</guid>
+      <description>잔흔 농도, 색 변화, 기존 형태, 겹치는 범위, 진행 가능 방향을 확인합니다.</description>
+      <pubDate>Mon, 19 Oct 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>CASE 003 — 눈썹 디자인 후 만족도가 달라지는 작은 차이</title>
+      <link>https://thebommbeautyacademy.com/caselab#case-des</link>
+      <guid isPermaLink="true">https://thebommbeautyacademy.com/caselab#case-des</guid>
+      <description>높이, 굵기, 각도, 앞머리 위치, 꼬리 방향의 차이를 분석합니다.</description>
+      <pubDate>Mon, 19 Oct 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>CASE 004 — 연령과 인상이 다르면 왜 같은 눈썹을 사용할 수 없는가</title>
+      <link>https://thebommbeautyacademy.com/caselab#case-age</link>
+      <guid isPermaLink="true">https://thebommbeautyacademy.com/caselab#case-age</guid>
+      <description>연령과 인상에 따라 달라지는 디자인 기준을 살펴봅니다.</description>
+      <pubDate>Mon, 19 Oct 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>DIRECTOR — 장형겸 대표원장</title>
+      <link>https://thebommbeautyacademy.com/director</link>
+      <guid isPermaLink="true">https://thebommbeautyacademy.com/director</guid>
+      <description>장형겸 대표원장이 현장에서 쌓은 기준과, 그 기준을 교육하는 방식.</description>
+      <pubDate>Mon, 19 Oct 2026 09:00:00 +0900</pubDate>
+    </item>
+    <item>
+      <title>APPLY — 수강 상담</title>
+      <link>https://thebommbeautyacademy.com/apply</link>
+      <guid isPermaLink="true">https://thebommbeautyacademy.com/apply</guid>
+      <description>상담 안내, 과정 선택 가이드, 준비할 내용과 상담 신청.</description>
+      <pubDate>Mon, 19 Oct 2026 09:00:00 +0900</pubDate>
+    </item>
+  </channel>
+</rss>
