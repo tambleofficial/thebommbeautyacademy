@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thebommbeautyacademy.com/sitemap.xml
+Sitemap: https://thebommacademy.co.kr/sitemap.xml

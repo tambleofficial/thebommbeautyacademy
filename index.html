@@ -12,13 +12,13 @@
 <meta name="description" content="20년의 현장 경험을 교육의 기준으로. 눈썹 디자인, 헤어스트록, 입술, 아이라인, SMP, 기존 반영구 수정·복원 교육 — 더봄뷰티 아카데미 장형겸 대표원장.">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#1A1614">
-<link rel="canonical" href="https://thebommbeautyacademy.com/">
-<link rel="alternate" type="application/rss+xml" title="THE BOMM BEAUTY ACADEMY" href="https://thebommbeautyacademy.com/rss.xml">
+<link rel="canonical" href="https://thebommacademy.co.kr/">
+<link rel="alternate" type="application/rss+xml" title="THE BOMM BEAUTY ACADEMY" href="https://thebommacademy.co.kr/rss.xml">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="THE BOMM BEAUTY ACADEMY">
 <meta property="og:title" content="THE BOMM BEAUTY ACADEMY | 더봄뷰티 아카데미">
 <meta property="og:description" content="20년의 현장 경험을 교육의 기준으로 만듭니다.">
-<meta property="og:url" content="https://thebommbeautyacademy.com/">
+<meta property="og:url" content="https://thebommacademy.co.kr/">
 <meta property="og:locale" content="ko_KR">
 <style>/**
  * Minified by jsDelivr using clean-css v5.3.3.
@@ -658,7 +658,7 @@ main h2,main p{text-wrap:balance}
         <button sc-camel-on-click="{{ n.go }}" style="all:unset;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;padding:20px 0;border-bottom:1px solid rgba(20,20,20,.12)"><span style="font-family:'Inter Tight',sans-serif;font-size:32px;font-weight:800;letter-spacing:-.04em">{{ n.label }}</span><span style="font-size:13px;color:#55514F">{{ n.kr }}</span></button>
       </sc-for>
     </div>
-    <a href="https://thebombeauty.pages.dev" target="_blank" rel="noopener" style="font-size:13px;color:#55514F">THE BOMM BEAUTY 시술 홈페이지 →</a>
+    <a href="https://thebommbeauty.co.kr" target="_blank" rel="noopener" style="font-size:13px;color:#55514F">THE BOMM BEAUTY 시술 홈페이지 →</a>
   </div>
 </sc-if>
 
@@ -1889,7 +1889,7 @@ main h2,main p{text-wrap:balance}
       <div style="display:flex;flex-direction:column;gap:10px;font-size:13px;color:#55514F">
         <span style="font-size:14px;font-weight:700;color:#141414;margin-bottom:4px">바로가기</span>
         <a href="https://naver.me/xq3aRFIe" target="_blank">네이버 플레이스 →</a>
-        <a href="https://thebombeauty.pages.dev" target="_blank" rel="noopener">THE BOMM BEAUTY 시술 홈페이지 →</a>
+        <a href="https://thebommbeauty.co.kr" target="_blank" rel="noopener">THE BOMM BEAUTY 시술 홈페이지 →</a>
       </div>
     </div>
     <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;padding-top:20px;border-top:1px solid rgba(20,20,20,.1);font-size:12px;color:#8A8582">
@@ -1998,7 +1998,7 @@ class Component extends DCLogic {
     const pt = document.querySelector('[data-pt]');
     const swap = () => {
       this.setState({ page, open: -1, faq: 0, fab: page !== 'home' });
-      const onSite = location.hostname.endsWith('thebommbeautyacademy.com'); history.replaceState(null, '', onSite ? (page === 'home' ? '/' : '/' + page) : (page === 'home' ? location.pathname + location.search : '#/' + page)); document.title = (page === 'home' ? '' : page.toUpperCase() + ' | ') + 'THE BOMM BEAUTY ACADEMY | 더봄뷰티 아카데미';
+      const onSite = location.hostname.endsWith('thebommacademy.co.kr'); history.replaceState(null, '', onSite ? (page === 'home' ? '/' : '/' + page) : (page === 'home' ? location.pathname + location.search : '#/' + page)); document.title = (page === 'home' ? '' : page.toUpperCase() + ' | ') + 'THE BOMM BEAUTY ACADEMY | 더봄뷰티 아카데미';
       scrollTo(0, 0);
       pt && pt.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 420, easing: 'ease-out', fill: 'forwards' });
     };
