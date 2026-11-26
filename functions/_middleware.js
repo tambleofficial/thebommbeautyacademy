@@ -5,7 +5,33 @@ const SEO_APEX = 'thebommacademy.co.kr';
 const SEO_BOT = /Yeti|NaverBot|Googlebot|Google-InspectionTool|AdsBot-Google|Storebot-Google|bingbot|BingPreview|msnbot|Daumoa|Daum|kakaotalk-scrap|Applebot|DuckDuckBot|YandexBot|Baiduspider|Slurp|facebookexternalhit|Twitterbot|LinkedInBot|Pinterest/i;
 const SEO_PAGES = {"":{"file":"home","path":"/"},"academy":{"file":"academy","path":"/academy"},"curriculum":{"file":"curriculum","path":"/curriculum"},"caselab":{"file":"caselab","path":"/caselab"},"director":{"file":"director","path":"/director"},"apply":{"file":"apply","path":"/apply"}};
 // 페이지별 제목·설명 (비어 있으면 원래 값 유지)
-const SEO_META = {};
+const SEO_META = {
+ "": {
+  "title": "수원 반영구학원, 더봄뷰티 아카데미 | 눈썹문신 배우기",
+  "desc": "수원 팔달 더봄뷰티 아카데미는 눈썹 디자인, 헤어스트록, 입술, 아이라인, SMP, 기존 반영구 수정·복원까지 실제 케이스 중심으로 가르치는 반영구학원입니다."
+ },
+ "academy": {
+  "title": "반영구학원 더봄뷰티 아카데미 소개 | 수원 팔달",
+  "desc": "시술 브랜드에서 쌓은 현장 경험을 교육으로 정리한 반영구학원, 더봄뷰티 아카데미를 소개합니다. 수업 운영 원칙과 교육 공간을 확인하세요."
+ },
+ "curriculum": {
+  "title": "눈썹문신 배우기부터 수정·복원까지 6개 과정 | 더봄 아카데미",
+  "desc": "눈썹 디자인부터 헤어스트록, 입술, 아이라인, SMP, 수정·복원까지 더봄뷰티 아카데미의 6개 반영구 교육 과정과 수업 방식, 피드백 과정을 안내합니다."
+ },
+ "caselab": {
+  "title": "반영구 실전 케이스 분석 수업 | 더봄뷰티 아카데미",
+  "desc": "현장에서 만나는 다양한 얼굴과 기존 작업 상태를 사례로 분석하는 더봄뷰티 아카데미 CASE LAB 수업입니다. 한 케이스를 분석하는 과정을 소개합니다."
+ },
+ "director": {
+  "title": "장형겸 대표원장 | 더봄뷰티 아카데미 반영구 교육",
+  "desc": "더봄뷰티 아카데미 장형겸 대표원장의 교육 기준과 경력을 소개합니다. 현장에서 얻은 판단 기준을 이유와 함께 설명하는 반영구 교육을 진행합니다."
+ },
+ "apply": {
+  "title": "반영구 수강 상담 신청 | 수원 더봄뷰티 아카데미",
+  "desc": "더봄뷰티 아카데미 반영구 수강 상담 안내입니다. 지금 단계에 맞는 과정을 상담에서 함께 정합니다. 경기 수원시 팔달구 팔달로 69, 인스타그램 DM·전화 문의."
+ }
+};
+const SEO_SCHEMA = "{\"@context\":\"https://schema.org\",\"@type\":\"EducationalOrganization\",\"name\":\"더봄뷰티 아카데미 THE BOMM BEAUTY ACADEMY\",\"url\":\"https://thebommacademy.co.kr/\",\"telephone\":\"+82-10-4131-2490\",\"image\":\"https://thebommacademy.co.kr/favicon-512.png\",\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"팔달로 69, 1동 403호 (고등동, 수원라임스퀘어)\",\"addressLocality\":\"수원시 팔달구\",\"addressRegion\":\"경기도\",\"postalCode\":\"16452\",\"addressCountry\":\"KR\"},\"sameAs\":[\"https://www.instagram.com/thebomm_beauty\",\"https://thebommbeauty.co.kr/\"]}";
 const seoEsc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 function seoKey(p) { return p.replace(/^\/+|\/+$/g, '').replace(/\.html$/, '').replace(/^index$/, ''); }
 function seoSetMeta(html, attr, name, content) {
@@ -30,6 +56,7 @@ function seoFix(html, key) {
     html = seoSetMeta(html, 'name', 'description', m.desc);
     html = seoSetMeta(html, 'property', 'og:description', m.desc);
   }
+  if (!/application\/ld\+json/i.test(html)) html = html.replace(/<\/head>/i, '<script type="application/ld+json">' + SEO_SCHEMA + '</script>\n</head>');
   return html;
 }
 
